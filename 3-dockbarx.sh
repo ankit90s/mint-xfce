@@ -6,6 +6,6 @@ if ! [ $(id -u) = 0 ]; then
   exit 1
 fi
 
-add-apt-repository ppa:xuzhen666/dockbarx
+add-apt-repository -y ppa:xuzhen666/dockbarx
 apt-get update
-apt-get install dockbarx
+apt-get install -y dockbarx

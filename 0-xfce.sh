@@ -20,11 +20,20 @@ builddr=$(pwd)
 
 # remove not required packages
 echo -e "\e[1;32m Remove not required packages \e[0m"
-aptitude -y remove hypnotix celluloid rhythmbox pix catfish redshift-gtk warpinator drawing hexchat thunderbird mintwelcome mintupdate mintbackup
+apt purge -y hypnotix celluloid rhythmbox pix catfish redshift-gtk warpinator drawing hexchat thunderbird
 
 # System Monitors
 echo -e "\e[1;32m Installing conky nefetch htop \e[0m"
 apt install -y conky neofetch htop
+
+# Dockbarx
+add-apt-repository -y ppa:xuzhen666/dockbarx
+apt-get update
+apt-get install -y dockbarx xfce4-dockbarx-plugin
+
+# xfce plugins
+apt install -y clipman xfce4-climpan-plugin
+apt install -y xfce4-panel-profiles
 
 # Download Managers
 echo -e "\e[1;32m Installing download managers \e[0m"
@@ -34,10 +43,14 @@ apt install -y curl wget axel aria2
 echo -e "\e[1;32m Installing redshift \e[0m"
 apt install -y redshift
 
+# exa
+echo -e "\e[1;32m Installing exa \e[0m"
+apt install -y exa
+
 # Text editor
 echo -e "\e[1;32m Installing geany, micro and neovim \e[0m"
 apt install -y geany micro neovim
-git clone https://github.com/VundleVim/Vundle.vim.git /home/$username/.vim/bundle/Vundle.vim
+# git clone https://github.com/VundleVim/Vundle.vim.git /home/$username/.vim/bundle/Vundle.vim
 
 # Media Player
 apt install -y mpv
@@ -47,7 +60,9 @@ apt install -y kdeconnect
 
 # terminal of choice
 echo -e "\e[1;32m Installing terminal \e[0m"
-apt install -y kitty
+add-apt-repository -y ppa:aslatter/ppa
+apt update
+apt install -y alacritty
 
 # libreoffice install
 echo -e "\e[1;32m Installing libreoffice and its themes \e[0m"
@@ -96,8 +111,7 @@ rm -rf pfetch
 echo -e "\e[1;32m Copying config files \e[0m"
 cd /home/$username
 git clone https://github.com/ankit90s/dotconfig && cd dotconfig
-cp -r * /home/$username/.config
-chown -R $username:$username /home/$username
+chown -R $username:$username *
 cd $builddr
 
 # copy bashrc and bash_aliases
