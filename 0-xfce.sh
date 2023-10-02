@@ -39,6 +39,10 @@ apt install -y xfce4-panel-profiles
 echo -e "\e[1;32m Installing download managers \e[0m"
 apt install -y curl wget axel aria2
 
+# translator
+echo -e "\e[1;32m Installing translator \e[0m"
+apt install -y translate-shell
+
 # redshift
 echo -e "\e[1;32m Installing redshift \e[0m"
 apt install -y redshift
