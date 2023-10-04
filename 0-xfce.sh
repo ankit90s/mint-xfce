@@ -128,6 +128,9 @@ echo -e "\e[1;32m Installing bashrc and bash aliases \e[0m"
 cp bashrc /home/$username/.bashrc
 cp bash_aliases /home/$username/.bash_aliases
 
+cp bashrc-root /root/.bashrc
+cp bash_aliases /root/.bash_aliases
+
 echo
 echo -e "\e[1;32m Rebooting please wait \e[0m"
 
