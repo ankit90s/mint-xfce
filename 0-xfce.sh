@@ -43,6 +43,11 @@ apt install -y curl wget axel aria2
 echo -e "\e[1;32m Installing translator \e[0m"
 apt install -y translate-shell
 
+# numlockx
+echo -e "\e[1;32m Installing numlockx \e[0m"
+apt install -y numlockx
+
+
 # redshift
 echo -e "\e[1;32m Installing redshift \e[0m"
 apt install -y redshift
